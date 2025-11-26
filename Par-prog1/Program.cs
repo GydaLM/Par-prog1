@@ -17,12 +17,10 @@ void Converter()
     if (menyChoice.KeyChar == '1')
     {
         Console.WriteLine(CurrencyConverter());
-        
     }
     else if (menyChoice.KeyChar == '2')
     {
         Console.WriteLine(TempConverter());
-        
     }
     else if (menyChoice.KeyChar == '3')
     {
@@ -36,22 +34,66 @@ void Converter()
 
 double CurrencyConverter()
 {
-    //Console.WriteLine("1. NOK -> USD\n2. USD -> NOK");
-    //var currency = Console.ReadKey();
+    Console.WriteLine("1. NOK -> USD\n2. USD -> NOK");
+    var menuChoice = Console.ReadKey();
+    Console.Clear();
+
     Console.WriteLine("Write number");
-    var input = Console.ReadLine();
-    double inputNumber = double.Parse(input);
-    double finalNumber = inputNumber / 10.22;
-    double result = Math.Round(finalNumber, 3);
-    return result;
+    if (menuChoice.KeyChar == '1')
+    {
+        var input = Console.ReadLine();
+        double inputNumber = double.Parse(input);
+        double result = inputNumber / 10.22;
+        double finalNumber = Math.Round(result, 3);
+        Console.WriteLine("NOK -> USD");
+        return finalNumber;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
-int TempConverter()
+double TempConverter()
 {
-    return 12;
+    Console.WriteLine("1. C -> F\n2. F -> C");
+    var menuChoice = Console.ReadKey();
+    Console.Clear();
+
+    Console.WriteLine("Write Temperature");
+    if (menuChoice.KeyChar == '1')
+    {
+        var input = Console.ReadLine();
+        double inputNumber = double.Parse(input);
+        double result = (inputNumber * 1.8) + 32;
+        double finalNumber = Math.Round(result, 1);
+        Console.WriteLine("C -> F");
+        return finalNumber;
+    }
+    else
+    {
+        return 0;
+    }
 }
 
-int WeightConverter()
+double WeightConverter()
 {
-    return 13;
+    Console.WriteLine("1. KG -> LBS\n2. LBS -> KG");
+    var menuChoice = Console.ReadKey();
+    Console.Clear();
+
+    Console.WriteLine("Write Weight");
+    if (menuChoice.KeyChar == '1')
+    {
+        var input = Console.ReadLine();
+        double inputNumber = double.Parse(input);
+        double result = inputNumber * 2.204;
+        double finalNumber = Math.Round(result, 2);
+        Console.WriteLine("KG -> LBS");
+        return finalNumber;
+    }
+    else
+    {
+        return 0;
+    }
 }
