@@ -11,19 +11,22 @@ void Converter()
     Console.WriteLine("Choose one:");
     Console.WriteLine("1. Currency\n2. Temperature\n3. Weight");
     var menyChoice = Console.ReadKey();
+    
     Console.Clear();
 
     if (menyChoice.KeyChar == '1')
     {
-        CurrencyConverter();
+        Console.WriteLine(CurrencyConverter());
+        
     }
     else if (menyChoice.KeyChar == '2')
     {
-        TempConverter();
+        Console.WriteLine(TempConverter());
+        
     }
     else if (menyChoice.KeyChar == '3')
     {
-        WeightConverter();
+        Console.WriteLine(WeightConverter());
     }
     else
     {
@@ -31,9 +34,16 @@ void Converter()
     }
 }
 
-int CurrencyConverter()
+double CurrencyConverter()
 {
-    return 11;
+    //Console.WriteLine("1. NOK -> USD\n2. USD -> NOK");
+    //var currency = Console.ReadKey();
+    Console.WriteLine("Write number");
+    var input = Console.ReadLine();
+    double inputNumber = double.Parse(input);
+    double finalNumber = inputNumber / 10.22;
+    double result = Math.Round(finalNumber, 3);
+    return result;
 }
 
 int TempConverter()
