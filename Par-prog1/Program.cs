@@ -50,8 +50,14 @@ double CurrencyConverter()
     }
     else
     {
-        return 0;
+        var input = Console.ReadLine();
+        double inputNumber = double.Parse(input);
+        double result = inputNumber * 10.22;
+        double finalNumber = Math.Round(result, 3);
+        Console.WriteLine("USD -> NOK");
+        return finalNumber;
     }
+ 
 }
 
 double TempConverter()
@@ -72,7 +78,12 @@ double TempConverter()
     }
     else
     {
-        return 0;
+        var input = Console.ReadLine();
+        double inputNumber = double.Parse(input);
+        double result = (inputNumber - 32) * 5/9;
+        double finalNumber = Math.Round(result, 1);
+        Console.WriteLine("F -> C");
+        return finalNumber;
     }
 }
 
@@ -94,6 +105,11 @@ double WeightConverter()
     }
     else
     {
-        return 0;
+        var input = Console.ReadLine();
+        double inputNumber = double.Parse(input);
+        double result = inputNumber / 2.204;
+        double finalNumber = Math.Round(result, 2);
+        Console.WriteLine("LBS -> KG");
+        return finalNumber;
     }
 }
